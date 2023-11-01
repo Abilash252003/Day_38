@@ -1,0 +1,18 @@
+
+///100 days of RTL///
+
+///Abilash P///
+
+///4-bit Odd parity Generator in gate flow modeling///
+
+module bit_4_odd_parity_gen (A, Y);
+
+input  [3:0]A;
+output Y;
+
+wire P;
+
+xor  o1 (P, A[3], A[2], A[1], A[0]);
+not n1 (Y,P);
+
+endmodule
