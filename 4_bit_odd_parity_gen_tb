@@ -1,0 +1,30 @@
+
+
+///100 days of RTL///
+
+///Abilash P///
+
+///4-bit Odd parity Generator test bench///
+
+module bit_4_odd_parity_gen_tb ();
+
+reg  [3:0]A;
+wire Y;
+
+bit_4_odd_parity_gen DUT (.A(A), .Y(Y));
+
+integer i;
+
+initial
+begin
+   for (i=0; i<16; i=i+1)
+   begin
+     A = i;
+     $display ("The Input A = %b", A);
+     #20;
+     $display ("The Output Y = %b", Y);
+     $display ("The Output value when combines with parity Output = %b", {A,Y});
+   end
+end
+
+endmodule
